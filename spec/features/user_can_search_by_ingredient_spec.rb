@@ -20,11 +20,11 @@ feature "user can search by ingredient" do
     # Then I should see a list of ten foods that contain the ingredient "sweet potatoes"
     expect(page).to have_content("top ten")
 
-    within "#top_ten" do
-      expect(page).to have_content(gtin/upc_code)
-      expect(page).to have_content(description)
-      expect(page).to have_content(brand_owner)
-      expect(page).to have_content(ingredients)
+    within "#.top_ten" do
+      expect(page).to have_content(".gtin/upc_code")
+      expect(page).to have_content(".description")
+      expect(page).to have_content(".brand_owner")
+      expect(page).to have_content(".ingredients")
     end
     # And for each of the foods I should see:
     # - The food's GTIN/UPC code
